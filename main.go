@@ -2,13 +2,14 @@ package mylogger
 
 import (
 	"log"
-	"time"
 )
 
-func LogInfo(message string) {
-	log.Printf("INFO %s - %v", time.Now(), message)
+type RomitLogger struct{}
+
+func (l *RomitLogger) LogInfo(message string) {
+	log.Printf("INFO %s", message)
 }
 
-func LogWarning(message string) {
-	log.Printf("Warning %s - %v", time.Now(), message)
+func (l *RomitLogger) LogWarning(message string) {
+	log.Printf("WARN %s", message)
 }
